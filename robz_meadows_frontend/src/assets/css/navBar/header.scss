@@ -1,0 +1,109 @@
+// Variables
+$primary-color: #000000;
+$secondary-color: #ffffff;
+$text-color: #333333;
+$transition: all 0.3s ease;
+
+// Mixins
+@mixin button-base {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: $transition;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+@mixin container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container {
+  @include container;
+}
+
+// Header Styles
+.header {
+  background: $secondary-color;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: $primary-color;
+  }
+
+  .nav {
+    display: flex;
+    gap: 2rem;
+
+    a {
+      text-decoration: none;
+      color: $text-color;
+      font-weight: 500;
+      transition: $transition;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .contact-btn {
+    @include button-base;
+    background: $primary-color;
+    color: $secondary-color;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .header {
+    .container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .nav {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    .logo h1 {
+      font-size: 1.5rem;
+    }
+
+    .nav {
+      gap: 0.5rem;
+    }
+
+    .contact-btn {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+  }
+}
