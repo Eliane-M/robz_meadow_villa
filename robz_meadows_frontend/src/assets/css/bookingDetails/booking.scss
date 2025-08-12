@@ -1,0 +1,407 @@
+// Variables
+$font-family: 'Inter Tight', Helvetica, Arial, sans-serif;
+$color-black: #000;
+$color-white: #fff;
+$color-gray-light: #f7f7f7;
+$color-gray-medium: #888;
+$color-gray-dark: #333;
+$color-yellow: #fbbf24;
+$color-green: #16a34a;
+$color-border: #ddd;
+
+.booking {
+  font-family: $font-family;
+  background-color: $color-white;
+  min-height: 100vh;
+  padding: 1rem;
+
+  &--empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-message {
+      text-align: center;
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    &-link {
+      color: #2563eb;
+      text-decoration: underline;
+      cursor: pointer;
+      &:hover {
+        color: #1e40af;
+      }
+    }
+  }
+
+  &__header {
+    background-color: $color-white;
+    padding: 3rem 0;
+
+    &-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0 1rem;
+    }
+  }
+
+  &__back-link {
+    text-decoration: none;
+  }
+
+  &__back-button {
+    border-radius: 50%;
+    padding: 0.5rem;
+    border: 2px solid $color-black;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $color-black;
+      svg {
+        color: $color-white;
+      }
+    }
+  }
+
+  &__back-icon {
+    width: 20px;
+    height: 20px;
+    color: $color-black;
+  }
+
+  &__header-texts {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 1rem;
+    color: $color-gray-medium;
+  }
+
+  &__main {
+    background-color: $color-gray-light;
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @media (min-width: 1024px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__item-card,
+  &__form-card {
+    background-color: $color-white;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: none;
+  }
+
+  &__item-card-content,
+  &__form-content {
+    padding: 2rem;
+  }
+
+  &__image-wrapper {
+    position: relative;
+    height: 16rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: $color-black;
+    color: $color-white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  &__item-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__star {
+    width: 1rem;
+    height: 1rem;
+    color: $color-gray-medium;
+
+    &--active {
+      color: $color-yellow;
+      fill: currentColor;
+    }
+  }
+
+  &__rating-text {
+    font-weight: 500;
+    color: $color-gray-medium;
+  }
+
+  &__features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  &__feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    // &-icon {
+    //   // for feature icons passed from props, style here if needed
+    // }
+
+    &-text {
+      font-weight: 400;
+      color: $color-gray-dark;
+    }
+  }
+
+  &__price-info {
+    background-color: $color-gray-light;
+    border-radius: 1rem;
+    padding: 1.5rem;
+  }
+
+  &__price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+
+  &__period {
+    font-weight: 400;
+    color: $color-gray-medium;
+  }
+
+  &__original-price {
+    font-weight: 400;
+    color: $color-gray-medium;
+    text-decoration: line-through;
+  }
+
+  &__note {
+    font-weight: 400;
+    color: $color-gray-medium;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+  }
+
+  &__form-header {
+    padding: 2rem;
+    padding-bottom: 0;
+  }
+
+  &__form-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__form-group {
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    &-title {
+      font-weight: 600;
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__form-label {
+    display: block;
+    font-weight: 500;
+    color: $color-gray-dark;
+    margin-bottom: 0.5rem;
+  }
+
+  &__input-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  &__input-icon {
+    position: absolute;
+    top: 50%;
+    left: 0.75rem;
+    transform: translateY(-50%);
+    color: $color-gray-medium;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+    &__input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 3rem; // left padding for icon space
+    border: 1px solid $color-border;
+    border-radius: 1rem;
+    font-family: $font-family;
+    font-size: 1rem;
+    color: $color-gray-dark;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:focus {
+      border-color: $color-black;
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+    }
+
+    &::placeholder {
+      color: $color-gray-medium;
+    }
+  }
+
+  &__textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid $color-border;
+    border-radius: 1rem;
+    font-family: $font-family;
+    font-size: 1rem;
+    color: $color-gray-dark;
+    resize: none;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:focus {
+      border-color: $color-black;
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+    }
+
+    &::placeholder {
+      color: $color-gray-medium;
+    }
+  }
+
+  &__radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    border: 1px solid $color-border;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-family: $font-family;
+    font-weight: 500;
+    color: $color-gray-dark;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      background-color: #f9fafb;
+    }
+
+    &:has(input:checked) {
+      border-color: $color-black;
+      background-color: #e5e7eb;
+    }
+  }
+
+  &__radio-input {
+    width: 1rem;
+    height: 1rem;
+    accent-color: $color-black; // modern browsers support this to color radio buttons
+    cursor: pointer;
+  }
+
+  &__radio-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: $color-gray-medium;
+  }
+
+  &__cash-icon {
+    display: inline-flex;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: $color-green;
+    color: $color-white;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__form-submit {
+    margin-top: 1.5rem;
+  }
+
+  &__submit-button {
+    width: 100%;
+    background-color: $color-black;
+    color: $color-white;
+    border-radius: 1rem;
+    padding: 1rem 0;
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: 1.125rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.85);
+    }
+  }
+}

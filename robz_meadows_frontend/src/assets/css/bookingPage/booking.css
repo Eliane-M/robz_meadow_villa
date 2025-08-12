@@ -1,0 +1,307 @@
+/* booking.scss - semantic classes used by BookingPage.jsx */
+.booking-page {
+  min-height: 100vh;
+  background-color: #fff;
+  font-family: "Inter_Tight", Helvetica, sans-serif;
+}
+
+/* --- HERO --- */
+.hero-section {
+  padding: 1rem 0;
+}
+.hero-section .container {
+  max-width: 1341px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.hero-section .top-corners {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+.hero-section .corner-top-left, .hero-section .corner-top-right {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-top: 2px solid #000;
+}
+.hero-section .corner-top-left {
+  border-left: 2px solid #000;
+  border-radius: 12px 0 0 0;
+}
+.hero-section .corner-top-right {
+  border-right: 2px solid #000;
+  border-radius: 0 12px 0 0;
+}
+.hero-section .hero-text {
+  text-align: center;
+  max-width: 48rem;
+  margin: 0 auto 4rem;
+}
+.hero-section .hero-text p {
+  font-weight: 500;
+  font-size: 1.125rem;
+  color: #000;
+  margin-bottom: 1rem;
+}
+.hero-section .hero-text h1 {
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 768px) {
+  .hero-section .hero-text h1 {
+    font-size: 3.75rem;
+  }
+}
+.hero-section .hero-text p:last-child {
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+.hero-section .booking-steps {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .hero-section .booking-steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.hero-section .booking-steps .step {
+  text-align: center;
+}
+.hero-section .booking-steps .step .step-number {
+  background: #000;
+  color: #fff;
+  border-radius: 9999px;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+.hero-section .booking-steps .step h3 {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.hero-section .booking-steps .step p {
+  color: #4b5563;
+  font-weight: 400;
+}
+
+/* --- BOOKING FORM --- */
+.booking-form-section {
+  background: #fafafa;
+  padding: 4rem 0;
+}
+.booking-form-section .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.booking-form-section .card {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border: none;
+}
+.booking-form-section .card-header {
+  padding: 2rem;
+  padding-bottom: 0;
+  text-align: center;
+}
+.booking-form-section .card-title {
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+.booking-form-section .tabs-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  background: #f5f5f5;
+  padding: 0.25rem;
+  border-radius: 0.75rem;
+}
+.booking-form-section .tabs-list .tab-trigger {
+  cursor: pointer;
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+.booking-form-section .tabs-list .tab-trigger .tab-title {
+  display: block;
+  font-weight: 600;
+}
+.booking-form-section .tabs-list .tab-trigger .tab-desc {
+  display: block;
+  font-weight: 400;
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+.booking-form-section .tabs-list .tab-trigger.active {
+  background: #000;
+  color: #fff;
+}
+.booking-form-section .card-content {
+  padding: 2rem;
+}
+.booking-form-section form {
+  width: 100%;
+  /* layout rows (single or two columns) */
+}
+.booking-form-section form label {
+  display: block;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+.booking-form-section form .form-row {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  margin-bottom: 1rem;
+}
+.booking-form-section form .form-row.single-col {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .booking-form-section form .form-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.booking-form-section form .form-col {
+  display: flex;
+  flex-direction: column;
+}
+.booking-form-section form .input-group {
+  position: relative;
+}
+.booking-form-section form .input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #9CA3AF;
+}
+.booking-form-section form input, .booking-form-section form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 3rem; /* leave space for icon */
+  border: 1px solid #d1d5db;
+  border-radius: 0.75rem;
+  outline: none;
+  font-size: 1rem;
+}
+.booking-form-section form input:focus, .booking-form-section form textarea:focus {
+  box-shadow: 0 0 0 2px #000;
+  border-color: transparent;
+}
+.booking-form-section form textarea {
+  resize: none;
+  padding-left: 1rem;
+}
+.booking-form-section form .submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  border: none;
+  cursor: pointer;
+}
+.booking-form-section form .submit-btn svg {
+  margin-right: 0.5rem;
+}
+.booking-form-section form .submit-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/* --- CONTACT --- */
+.contact-section {
+  padding: 4rem 0;
+}
+.contact-section .container {
+  max-width: 1341px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.contact-section .contact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.contact-section .contact-header h2 {
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+.contact-section .contact-header p {
+  color: #4b5563;
+  font-size: 1.125rem;
+}
+.contact-section .contact-cards {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .contact-section .contact-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.contact-section .contact-cards .card {
+  background: #fbfbfb;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  border: none;
+}
+.contact-section .contact-cards .card .contact-icon {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 1rem;
+  color: #000;
+}
+.contact-section .contact-cards .card h3 {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.contact-section .contact-cards .card p {
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+.contact-section .contact-cards .card .muted {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+.contact-section .bottom-corners {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5rem;
+}
+.contact-section .corner-bottom-left, .contact-section .corner-bottom-right {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-bottom: 2px solid #000;
+}
+.contact-section .corner-bottom-left {
+  border-left: 2px solid #000;
+  border-radius: 0 0 0 12px;
+}
+.contact-section .corner-bottom-right {
+  border-right: 2px solid #000;
+  border-radius: 0 0 12px 0;
+}/*# sourceMappingURL=booking.css.map */

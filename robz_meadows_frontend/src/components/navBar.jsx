@@ -21,7 +21,7 @@ const NavBar = () => {
       </div>
       <ul className={isOpen ? 'active' : ''}>
         <li><Link to='/'>Home</Link></li>
-        <li><Link>About Us</Link></li>
+        <li><Link to='/booking-details'>About Us</Link></li>
         <li><Link>Cars for Rent</Link></li>
         <li><Link>Cars for Sale</Link></li>
         <li><Link>Apartments</Link></li>

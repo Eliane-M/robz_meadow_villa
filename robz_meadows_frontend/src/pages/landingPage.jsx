@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "../components/navBar";
 import '../assets/css/landingPage/landingPage.css';
 import { FaAngleRight } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 import Footer from "../components/layout/Footer";
 import hero_section from '../images/hero_section.png';
 import available_car from '../images/available_car.jpg';
@@ -23,18 +24,30 @@ const LandingPage = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="container">
+          
           <div className="hero-content">
             <div className="hero-text">
+              <div className="top-corners">
+                <div className="corner-top-left" />
+              </div>
               <p className="hero-subtitle">Robz Meadows Villa Ltd</p>
               <h1 className="hero-title">Drive in Style. Live in Comfort.</h1>
               <p className="hero-description">
                 Explore premium car rentals, trusted vehicle sales, and quality apartments — all in one place.
               </p>
               <div className="hero-buttons">
-                <button className="btn-primary">Explore Rentals</button>
-                <button className="btn-secondary">Book apartments</button>
+                <button className="btn-primary">
+                  <Link to="/services">Explore Rentals</Link>
+                </button>
+                <button className="btn-secondary">
+                  <Link to="/booking">Book apartments</Link>
+                </button>
+              </div>
+              <div className="bottom-corners">
+                <div className="corner-bottom-left" />
               </div>
             </div>
+
             <div className="hero-image">
               <img src={hero_section} alt="Modern apartment interior" />
               <div className="hero-card">
