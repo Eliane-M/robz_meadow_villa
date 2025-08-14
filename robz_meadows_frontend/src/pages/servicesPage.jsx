@@ -12,7 +12,7 @@ export const ServicesPage = () => {
       title: "Car Rentals",
       description: "Wide range of vehicles for daily, weekly, or monthly rentals",
       features: ["Daily to monthly rentals", "Free pickup in town", "24/7 roadside assistance", "Comprehensive insurance"],
-      link: "/car-rentals",
+      link: "/cars-for-rent",
       bgColor: "bg-blue-600",
       image: "/whatsapp-image-2025-05-30-at-18-29-31.png"
     },
@@ -21,7 +21,7 @@ export const ServicesPage = () => {
       title: "Car Sales",
       description: "New and pre-owned vehicles at competitive prices",
       features: ["New & used vehicles", "Financing options", "Trade-in services", "Complete documentation"],
-      link: "/car-sales",
+      link: "/cars-for-sale",
       bgColor: "bg-green-600",
       image: "/whatsapp-image-2025-05-30-at-18-29-29--1--1.png"
     },

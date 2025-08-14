@@ -1,0 +1,112 @@
+.car-sales-page {
+  background-color: #fff;
+
+  .hero-section {
+    padding: 4rem 0;
+    text-align: center;
+
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .hero-subtitle {
+      font-size: 1.125rem;
+      color: #666;
+    }
+  }
+
+  .filters-section {
+    padding: 2rem 0;
+    background: #f8f8f8;
+
+    .filters-bar {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+
+      select {
+        padding: 0.5rem;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
+    }
+  }
+
+  .category-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+
+    .category-tab {
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      background: #eee;
+      cursor: pointer;
+
+      &.active {
+        background: #000;
+        color: #fff;
+      }
+    }
+  }
+
+  .cars-grid {
+    padding: 2rem 0;
+
+    .car-card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+      .car-image {
+        width: 100%;
+        height: auto;
+      }
+
+      .car-badge {
+        background: black;
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+      }
+
+      .car-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+
+      .car-meta {
+        display: flex;
+        gap: 0.5rem;
+        color: #666;
+      }
+
+      .car-features {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .car-description {
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      .car-price {
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .star-filled {
+    color: gold;
+  }
+
+  .star-empty {
+    color: #ccc;
+  }
+}

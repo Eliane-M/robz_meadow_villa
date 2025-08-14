@@ -1,0 +1,92 @@
+.car-sales-page {
+  background-color: #fff;
+}
+.car-sales-page .hero-section {
+  padding: 4rem 0;
+  text-align: center;
+}
+.car-sales-page .hero-section .hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.car-sales-page .hero-section .hero-subtitle {
+  font-size: 1.125rem;
+  color: #666;
+}
+.car-sales-page .filters-section {
+  padding: 2rem 0;
+  background: #f8f8f8;
+}
+.car-sales-page .filters-section .filters-bar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.car-sales-page .filters-section .filters-bar select {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+.car-sales-page .category-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.car-sales-page .category-tabs .category-tab {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background: #eee;
+  cursor: pointer;
+}
+.car-sales-page .category-tabs .category-tab.active {
+  background: #000;
+  color: #fff;
+}
+.car-sales-page .cars-grid {
+  padding: 2rem 0;
+}
+.car-sales-page .cars-grid .car-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.car-sales-page .cars-grid .car-card .car-image {
+  width: 100%;
+  height: auto;
+}
+.car-sales-page .cars-grid .car-card .car-badge {
+  background: black;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+.car-sales-page .cars-grid .car-card .car-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.car-sales-page .cars-grid .car-card .car-meta {
+  display: flex;
+  gap: 0.5rem;
+  color: #666;
+}
+.car-sales-page .cars-grid .car-card .car-features {
+  display: flex;
+  gap: 1rem;
+}
+.car-sales-page .cars-grid .car-card .car-description {
+  color: #666;
+  font-size: 0.9rem;
+}
+.car-sales-page .cars-grid .car-card .car-price {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.car-sales-page .star-filled {
+  color: gold;
+}
+.car-sales-page .star-empty {
+  color: #ccc;
+}/*# sourceMappingURL=carSales.css.map */

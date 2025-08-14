@@ -21,13 +21,13 @@ const NavBar = () => {
       </div>
       <ul className={isOpen ? 'active' : ''}>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/booking-details'>About Us</Link></li>
-        <li><Link>Cars for Rent</Link></li>
-        <li><Link>Cars for Sale</Link></li>
-        <li><Link>Apartments</Link></li>
+        <li><Link to='/services'>About Us</Link></li>
+        <li><Link to='/cars-for-rent'>Cars for Rent</Link></li>
+        <li><Link to='/cars-for-sale'>Cars for Sale</Link></li>
+        <li><Link to='/apartments'>Apartments</Link></li>
       </ul>
       <button>
-        <a href="/contact">Contact Us</a>
+        <a href="/login">Login</a>
         <FaAngleRight size={20}/>
       </button>
     </nav>

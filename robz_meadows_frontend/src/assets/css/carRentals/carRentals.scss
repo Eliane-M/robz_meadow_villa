@@ -1,0 +1,532 @@
+// ----------------------
+// Variables
+// ----------------------
+$color-black: #000;
+$color-white: #fff;
+$color-border: #e5e7eb;
+$color-gray-900: #111827;
+$color-gray-700: #374151;
+$color-gray-600: #4b5563;
+$color-gray-500: #6b7280;
+$color-gray-300: #d1d5db;
+
+$color-accent: #f59e0b;       // warm gold
+$color-accent-50: #fef3c7;    // pale accent for backgrounds
+$color-accent-700: #b45309;   // darker accent for hover
+
+$radius-lg: 1rem;
+$radius-md: 0.75rem;
+$shadow-sm: 0 4px 12px rgba(0,0,0,0.08);
+$shadow-md: 0 6px 16px rgba(0,0,0,0.10);
+
+$font: 'Inter_Tight', Helvetica, Arial, sans-serif;
+
+// ----------------------
+// Helpers
+// ----------------------
+.icon {
+  width: 20px;
+  height: 20px;
+  stroke: $color-gray-600;
+  flex-shrink: 0;
+
+  &--muted {
+    stroke: $color-gray-500;
+  }
+}
+
+.star {
+  width: 16px;
+  height: 16px;
+  stroke: $color-gray-300;
+  fill: transparent;
+
+  &.is-active {
+    stroke: $color-accent;
+    fill: $color-accent;
+  }
+}
+
+.btn {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  font-family: $font;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1;
+  border-radius: $radius-md;
+  padding: 0.75rem 1.25rem;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &--primary {
+    background: $color-black;
+    color: $color-white;
+
+    &:hover:not(:disabled) {
+      background: rgba(0,0,0,0.85);
+    }
+  }
+
+  &--outline {
+    background: $color-white;
+    color: $color-black;
+    border: 2px solid $color-black;
+
+    &:hover:not(:disabled) {
+      background: $color-black;
+      color: $color-white;
+    }
+  }
+
+  &--lg {
+    padding: 1rem 1.5rem;
+    font-size: 1.0625rem;
+    border-radius: $radius-lg;
+  }
+}
+
+.btn-link {
+  display: inline-flex;
+  width: 100%;
+}
+
+// ----------------------
+// Page
+// ----------------------
+.car-rentals {
+  background: $color-white;
+  min-height: 100vh;
+  font-family: $font;
+
+  // HERO
+  &__hero {
+    position: relative;
+    color: $color-white;
+    padding: 1rem .5rem;
+    text-align: center;
+
+    /* Swap to your own hero image */
+    background:
+      linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+      url('../../../images/available_car.jpg') cover no-repeat;
+  }
+
+  &__hero-inner {
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+
+  &__eyebrow {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.75rem;
+    font-size: 1.125rem;
+  }
+
+  &__hero-heading {
+    font-weight: 800;
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    line-height: 1.15;
+    margin: 0 0 1rem 0;
+  }
+
+  &__hero-subheading {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin: 0 auto 2rem;
+    max-width: 42rem;
+    color: rgba(255,255,255,0.9);
+  }
+
+  &__stats {
+    list-style: none;
+    margin: 2.5rem auto 0;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+    max-width: 56rem;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__stat {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 1rem;
+    border-radius: $radius-md;
+    // backdrop-filter: blur(3px);
+  }
+
+  &__stat-number {
+    font-weight: 800;
+    font-size: 1.75rem;
+    margin-bottom: 0.25rem;
+  }
+
+  &__stat-label {
+    opacity: 0.95;
+    font-weight: 500;
+  }
+
+  // FILTERS
+  &__filters {
+    max-width: 1200px;
+    margin: -2rem auto 2rem; // overlap hero
+    padding: 1.25rem;
+    background: $color-white;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+  }
+
+  &__filters-row {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  &__filters-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    color: $color-gray-900;
+    font-size: 1.125rem;
+  }
+
+  &__filters-controls {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  &__filters-field {
+    min-width: 220px;
+
+    label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: $color-gray-700;
+      margin-bottom: 0.5rem;
+    }
+
+    select {
+      width: 100%;
+      padding: 0.65rem 0.9rem;
+      border: 1px solid $color-border;
+      border-radius: $radius-md;
+      font-family: $font;
+      font-size: 1rem;
+      color: $color-gray-700;
+      outline: none;
+      transition: border-color 0.2s ease;
+
+      &:focus {
+        border-color: $color-accent;
+      }
+    }
+  }
+
+  // Category pills
+  &__categories {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+
+  &__category-pill {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 0.65rem 0.9rem;
+    background: $color-white;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+    &.is-active {
+      background: $color-black;
+      color: $color-white;
+      border-color: $color-black;
+    }
+  }
+
+  &__category-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  &__category-count {
+    font-size: 0.8rem;
+    color: $color-gray-600;
+    opacity: 0.9;
+  }
+
+  // CARS GRID
+  &__cars {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem 0;
+  }
+
+  &__cars-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__load-more {
+    text-align: center;
+    padding: 2rem 0 3rem;
+  }
+
+  // WHY
+  &__why {
+    background: $color-accent-50;
+    padding: 4rem 1rem;
+    margin-top: 2rem;
+  }
+
+  &__why-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__why-heading {
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+    font-weight: 800;
+    color: $color-black;
+    margin-bottom: 2rem;
+  }
+
+  &__why-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+// WHY item
+.why-item {
+  background: $color-white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-sm;
+  padding: 2rem;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-2px);
+  }
+
+  &__icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+  }
+
+  &__desc {
+    color: $color-gray-600;
+    line-height: 1.6;
+  }
+}
+
+// CAR CARD
+.car-card {
+  background: $color-white;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-sm;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-md;
+  }
+
+  &__media {
+    position: relative;
+    height: 12rem;
+    background: #f6f7f8;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    background: $color-black;
+    color: $color-white;
+    font-weight: 600;
+    padding: 0.4rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: grid;
+    place-items: center;
+  }
+
+  &__overlay-badge {
+    background: #dc2626; // red
+    color: $color-white;
+    font-weight: 700;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+  }
+
+  &__body {
+    padding: 1.25rem 1.25rem 0.75rem;
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__title {
+    font-weight: 800;
+    font-size: 1.125rem;
+    margin: 0 0 0.35rem 0;
+  }
+
+  &__rating {
+    text-align: right;
+
+    .stars {
+      display: inline-flex;
+      gap: 2px;
+      margin-bottom: 2px;
+    }
+  }
+
+  &__reviews {
+    font-size: 0.85rem;
+    color: $color-gray-600;
+  }
+
+  &__location {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: $color-gray-600;
+    font-size: 0.95rem;
+    margin: 0.25rem 0 0.75rem;
+  }
+
+  &__features {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin: 0.25rem 0 0.75rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__feature {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: $color-gray-700;
+    font-size: 0.95rem;
+
+    .feature-icon {
+      width: 16px;
+      height: 16px;
+      stroke: $color-gray-700;
+    }
+  }
+
+  &__price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.25rem 0 0.5rem;
+  }
+
+  &__price {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__price-current {
+    color: $color-accent;
+    font-weight: 800;
+    font-size: 1.375rem;
+  }
+
+  &__price-period {
+    color: $color-gray-600;
+    font-weight: 500;
+  }
+
+  &__price-original {
+    color: $color-gray-500;
+    text-decoration: line-through;
+    font-size: 0.9rem;
+  }
+
+  &__note {
+    color: $color-gray-600;
+    font-size: 0.9rem;
+    margin: 0.25rem 0 1rem;
+  }
+
+  &__footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    padding: 0 1.25rem 1.25rem;
+  }
+}
